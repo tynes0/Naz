@@ -26,11 +26,11 @@ OK, I created the operator, so how do I use it? Here is the examples:
 ```cpp
 // EXAMPLE - 1
 /*
- *	We used <= because the left_type is the reference, 
- *	and >= because the right_type is the reference.
+ *	We used || because the left_type is the reference, 
+ *	and || because the right_type is the reference.
 */
 
-#define _swap_ <=swap_op>= // don't use macros if you don't want to
+#define _swap_ ||swap_op|| // don't use macros if you don't want to
 
 void test1()
 {
@@ -47,10 +47,10 @@ create_operator(in_op, bool, char, const std::string&)
 	return right.find(left) != std::string::npos ? true : false;
 }
 /*
- *	We used < because the left_type is not the reference, 
- *	and > because the right_type is not the reference.
+ *	We used | because the left_type is not the reference, 
+ *	and | because the right_type is not the reference.
 */
-#define is_in <in_op>
+#define is_in |in_op|
 
 void test2()
 {
@@ -70,14 +70,14 @@ create_operator(add_to, void, int, int&)
 }
 
 /*
- *	We used < because the left_type is not the reference, 
- *	and >= because the right_type is the reference.
+ *	We used | because the left_type is not the reference, 
+ *	and || because the right_type is the reference.
 */
 
 void test3()
 {
 	int a = 10;
-	5 <add_to>= a;
+	5 |add_to|| a;
 	std::cout << a; // output: 15
 }
 ```
@@ -98,7 +98,7 @@ void my_swap(int& lhs, int& rhs)
 // Here we use the naz::make_operator function
 _NAZ_INLINE constexpr auto swap_op = naz::make_operator(my_swap);
 
-#define _swap_ <=my_swap>= 
+#define _swap_ ||my_swap|| 
 
 void test4()
 {
