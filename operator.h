@@ -77,7 +77,5 @@ namespace naz
 	{
 		return detail::operator_wrapper<_Fun> { fun };
 	}
-
-}
-
 #define create_operator(operator_name, return_type, left_type, right_type) return_type __impl_of_ ## operator_name (left_type left, right_type right); _NAZ_INLINE constexpr auto operator_name = naz::make_operator(__impl_of_ ## operator_name); return_type __impl_of_ ## operator_name (left_type left, right_type right)
+}
