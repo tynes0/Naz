@@ -1,3 +1,9 @@
+
+/*
+*	COPYRIGHT: Tynes
+*	Github: https://github.com/tynes0/Naz-Operator-Wrapper
+*/
+
 #pragma once
 
 #include <type_traits>
