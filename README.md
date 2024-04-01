@@ -1,4 +1,4 @@
-# Naz Operator Wrapper
+# Naz operator generator
 
 Naz is a "header only" project that allows you to generate your own operators in C++.
 
