@@ -98,7 +98,7 @@ void my_swap(int& lhs, int& rhs)
 // Here we use the naz::make_operator function
 _NAZ_INLINE constexpr auto swap_op = naz::make_operator(my_swap);
 
-#define _swap_ ||my_swap|| 
+#define _swap_ ||swap_op|| 
 
 void test4()
 {
